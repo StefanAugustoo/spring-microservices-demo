@@ -1,0 +1,5 @@
+br/pucrs/microdemo/clientes/service/ClienteServiceTest.class
+br/pucrs/microdemo/clientes/repository/ClienteRepositoryTest.class
+br/pucrs/microdemo/clientes/ClientesServiceApplicationTests.class
+br/pucrs/microdemo/clientes/ClientesHttpIntegrationTest.class
+br/pucrs/microdemo/clientes/controller/ClienteControllerTest.class

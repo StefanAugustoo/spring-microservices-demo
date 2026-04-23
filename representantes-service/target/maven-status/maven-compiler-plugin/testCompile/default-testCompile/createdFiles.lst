@@ -1,0 +1,5 @@
+br/pucrs/microdemo/representantes/service/RepresentanteServiceTest.class
+br/pucrs/microdemo/representantes/repository/RepresentanteRepositoryTest.class
+br/pucrs/microdemo/representantes/RepresentantesServiceApplicationTests.class
+br/pucrs/microdemo/representantes/RepresentantesHttpIntegrationTest.class
+br/pucrs/microdemo/representantes/controller/RepresentanteControllerTest.class

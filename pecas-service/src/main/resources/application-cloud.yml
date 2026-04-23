@@ -1,0 +1,4 @@
+# Ative com: --spring.profiles.active=cloud
+spring:
+  config:
+    import: optional:configserver:http://localhost:8888

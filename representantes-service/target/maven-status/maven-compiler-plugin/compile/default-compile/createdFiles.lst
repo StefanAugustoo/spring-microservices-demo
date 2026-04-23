@@ -1,0 +1,8 @@
+br/pucrs/microdemo/representantes/dto/RepresentanteRequest.class
+br/pucrs/microdemo/representantes/controller/RepresentanteController.class
+br/pucrs/microdemo/representantes/util/CpfUtil.class
+br/pucrs/microdemo/representantes/service/RepresentanteService.class
+br/pucrs/microdemo/representantes/dto/RepresentanteResponse.class
+br/pucrs/microdemo/representantes/repository/RepresentanteRepository.class
+br/pucrs/microdemo/representantes/domain/Representante.class
+br/pucrs/microdemo/representantes/RepresentantesServiceApplication.class

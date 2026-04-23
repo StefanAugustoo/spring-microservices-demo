@@ -1,0 +1,8 @@
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/controller/RepresentanteController.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/repository/RepresentanteRepository.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/dto/RepresentanteRequest.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/dto/RepresentanteResponse.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/util/CpfUtil.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/service/RepresentanteService.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/RepresentantesServiceApplication.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/representantes-service/src/main/java/br/pucrs/microdemo/representantes/domain/Representante.java

@@ -1,0 +1,5 @@
+br/pucrs/microdemo/pecas/PecasHttpIntegrationTest.class
+br/pucrs/microdemo/pecas/controller/PecaControllerTest.class
+br/pucrs/microdemo/pecas/PecasServiceApplicationTests.class
+br/pucrs/microdemo/pecas/repository/PecaRepositoryTest.class
+br/pucrs/microdemo/pecas/service/PecaServiceTest.class

@@ -1,0 +1,7 @@
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/pecas-service/src/main/java/br/pucrs/microdemo/pecas/dto/PecaRequest.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/pecas-service/src/main/java/br/pucrs/microdemo/pecas/dto/PecaResponse.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/pecas-service/src/main/java/br/pucrs/microdemo/pecas/PecasServiceApplication.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/pecas-service/src/main/java/br/pucrs/microdemo/pecas/repository/PecaRepository.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/pecas-service/src/main/java/br/pucrs/microdemo/pecas/controller/PecaController.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/pecas-service/src/main/java/br/pucrs/microdemo/pecas/domain/Peca.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/pecas-service/src/main/java/br/pucrs/microdemo/pecas/service/PecaService.java

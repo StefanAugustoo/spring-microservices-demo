@@ -1,0 +1,7 @@
+br/pucrs/microdemo/pecas/service/PecaService.class
+br/pucrs/microdemo/pecas/repository/PecaRepository.class
+br/pucrs/microdemo/pecas/domain/Peca.class
+br/pucrs/microdemo/pecas/PecasServiceApplication.class
+br/pucrs/microdemo/pecas/dto/PecaRequest.class
+br/pucrs/microdemo/pecas/dto/PecaResponse.class
+br/pucrs/microdemo/pecas/controller/PecaController.class

@@ -1,0 +1,36 @@
+# Prometheus + Grafana para métricas dos microserviços (Micrometer /actuator/prometheus).
+# Suba antes os apps no host (Config → Eureka → serviços → Gateway) nas portas 8888,8761,8080-8083.
+#
+# Uso: docker compose -f docker-compose.observability.yml up -d
+#   Prometheus: http://localhost:9090
+#   Grafana:     http://localhost:3000  (admin / admin)
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.48.1
+    container_name: microdemo-prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  grafana:
+    image: grafana/grafana:10.2.3
+    container_name: microdemo-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_DEFAULT_THEME: dark
+      GF_SERVER_ROOT_URL: http://localhost:3000
+    volumes:
+      - ./observability/grafana/provisioning:/etc/grafana/provisioning:ro
+    depends_on:
+      - prometheus

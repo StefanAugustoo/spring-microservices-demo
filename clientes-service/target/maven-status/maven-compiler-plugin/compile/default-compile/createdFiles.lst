@@ -1,0 +1,8 @@
+br/pucrs/microdemo/clientes/domain/Cliente.class
+br/pucrs/microdemo/clientes/controller/ClienteController.class
+br/pucrs/microdemo/clientes/service/ClienteService.class
+br/pucrs/microdemo/clientes/util/CpfUtil.class
+br/pucrs/microdemo/clientes/ClientesServiceApplication.class
+br/pucrs/microdemo/clientes/dto/ClienteResponse.class
+br/pucrs/microdemo/clientes/dto/ClienteRequest.class
+br/pucrs/microdemo/clientes/repository/ClienteRepository.class

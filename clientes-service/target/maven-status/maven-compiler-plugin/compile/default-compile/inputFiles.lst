@@ -1,0 +1,8 @@
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/dto/ClienteResponse.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/dto/ClienteRequest.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/util/CpfUtil.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/ClientesServiceApplication.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/repository/ClienteRepository.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/controller/ClienteController.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/domain/Cliente.java
+/Users/stefanreiznauttchagas/Pucrs/Construção de software/spring-microservices-demo/clientes-service/src/main/java/br/pucrs/microdemo/clientes/service/ClienteService.java

@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns: '*'
+            allowedMethods: '*'
+            allowedHeaders: '*'
+      routes:
+        - id: pecas-service
+          uri: lb://pecas-service
+          predicates:
+            - Path=/api/pecas/**
+        - id: clientes-service
+          uri: lb://clientes-service
+          predicates:
+            - Path=/api/clientes/**
+        - id: representantes-service
+          uri: lb://representantes-service
+          predicates:
+            - Path=/api/representantes/**

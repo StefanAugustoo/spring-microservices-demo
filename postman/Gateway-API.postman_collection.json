@@ -1,0 +1,106 @@
+{
+  "info": {
+    "name": "Gateway API — Peças, Clientes, Representantes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "gateway", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "Peças",
+      "item": [
+        {
+          "name": "Cadastrar peça",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numeroIdentificacao\": \"PEC-001\",\n  \"nome\": \"Parafuso M10\",\n  \"descricao\": \"Aço inox\"\n}"
+            },
+            "url": "{{gateway}}/api/pecas"
+          }
+        },
+        {
+          "name": "Listar todas",
+          "request": { "method": "GET", "url": "{{gateway}}/api/pecas" }
+        },
+        {
+          "name": "Buscar por nome",
+          "request": { "method": "GET", "url": "{{gateway}}/api/pecas?nome=Parafuso" }
+        },
+        {
+          "name": "Buscar por id",
+          "request": { "method": "GET", "url": "{{gateway}}/api/pecas/1" }
+        }
+      ]
+    },
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Cadastrar cliente",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cpf\": \"529.982.247-25\",\n  \"nome\": \"Maria Silva\"\n}"
+            },
+            "url": "{{gateway}}/api/clientes"
+          }
+        },
+        {
+          "name": "Listar todos",
+          "request": { "method": "GET", "url": "{{gateway}}/api/clientes" }
+        },
+        {
+          "name": "Buscar por nome",
+          "request": { "method": "GET", "url": "{{gateway}}/api/clientes?nome=Maria" }
+        },
+        {
+          "name": "Buscar por id",
+          "request": { "method": "GET", "url": "{{gateway}}/api/clientes/1" }
+        },
+        {
+          "name": "Buscar por CPF",
+          "request": { "method": "GET", "url": "{{gateway}}/api/clientes/cpf/52998224725" }
+        }
+      ]
+    },
+    {
+      "name": "Representantes",
+      "item": [
+        {
+          "name": "Cadastrar representante",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cpf\": \"111.444.777-35\",\n  \"nome\": \"João Representante\"\n}"
+            },
+            "url": "{{gateway}}/api/representantes"
+          }
+        },
+        {
+          "name": "Listar todos",
+          "request": { "method": "GET", "url": "{{gateway}}/api/representantes" }
+        },
+        {
+          "name": "Buscar por nome",
+          "request": { "method": "GET", "url": "{{gateway}}/api/representantes?nome=João" }
+        },
+        {
+          "name": "Buscar por id",
+          "request": { "method": "GET", "url": "{{gateway}}/api/representantes/1" }
+        },
+        {
+          "name": "Buscar por CPF",
+          "request": { "method": "GET", "url": "{{gateway}}/api/representantes/cpf/11144477735" }
+        }
+      ]
+    }
+  ]
+}

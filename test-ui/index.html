@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teste — API Gateway</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; }
+    body { max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { font-size: 1.25rem; }
+    section { margin: 1.5rem 0; padding: 1rem; border: 1px solid #ccc; border-radius: 8px; }
+    button { margin: 0.25rem 0.25rem 0.25rem 0; padding: 0.4rem 0.75rem; cursor: pointer; }
+    pre { background: #f4f4f4; padding: 0.75rem; overflow: auto; font-size: 0.85rem; }
+    label { display: block; margin-top: 0.5rem; }
+    input { width: 100%; max-width: 28rem; padding: 0.35rem; }
+  </style>
+</head>
+<body>
+  <h1>Teste via Gateway (<code id="base"></code>)</h1>
+  <p>Abra este arquivo pelo navegador ou sirva a pasta com um servidor HTTP. Todas as chamadas vão para a porta <strong>8080</strong> (Gateway).</p>
+
+  <section>
+    <h2>Peças</h2>
+    <button type="button" id="btn-pecas-list">GET /api/pecas</button>
+    <label>Nome (opcional) <input type="text" id="pecas-nome" placeholder="filtrar por nome" /></label>
+    <button type="button" id="btn-pecas-nome">GET /api/pecas?nome=...</button>
+    <label>Id <input type="text" id="pecas-id" placeholder="1" /></label>
+    <button type="button" id="btn-pecas-id">GET /api/pecas/{id}</button>
+    <button type="button" id="btn-pecas-post">POST exemplo peça</button>
+    <pre id="out-pecas">—</pre>
+  </section>
+
+  <section>
+    <h2>Clientes</h2>
+    <button type="button" id="btn-cli-list">GET /api/clientes</button>
+    <label>Nome <input type="text" id="cli-nome" /></label>
+    <button type="button" id="btn-cli-nome">GET ?nome=</button>
+    <label>Id <input type="text" id="cli-id" /></label>
+    <button type="button" id="btn-cli-id">GET /{id}</button>
+    <label>CPF <input type="text" id="cli-cpf" placeholder="só dígitos ou formatado" /></label>
+    <button type="button" id="btn-cli-cpf">GET /cpf/{cpf}</button>
+    <button type="button" id="btn-cli-post">POST exemplo cliente</button>
+    <pre id="out-cli">—</pre>
+  </section>
+
+  <section>
+    <h2>Representantes</h2>
+    <button type="button" id="btn-rep-list">GET /api/representantes</button>
+    <label>Nome <input type="text" id="rep-nome" /></label>
+    <button type="button" id="btn-rep-nome">GET ?nome=</button>
+    <label>Id <input type="text" id="rep-id" /></label>
+    <button type="button" id="btn-rep-id">GET /{id}</button>
+    <label>CPF <input type="text" id="rep-cpf" /></label>
+    <button type="button" id="btn-rep-cpf">GET /cpf/{cpf}</button>
+    <button type="button" id="btn-rep-post">POST exemplo representante</button>
+    <pre id="out-rep">—</pre>
+  </section>
+
+  <script>
+    const BASE = "http://localhost:8080";
+    document.getElementById("base").textContent = BASE;
+
+    async function show(el, p) {
+      try {
+        const r = await p;
+        const text = await r.text();
+        el.textContent = r.status + " " + r.statusText + "\n" + text;
+      } catch (e) {
+        el.textContent = "Erro: " + e.message;
+      }
+    }
+
+    document.getElementById("btn-pecas-list").onclick = () =>
+      show(document.getElementById("out-pecas"), fetch(BASE + "/api/pecas"));
+
+    document.getElementById("btn-pecas-nome").onclick = () => {
+      const n = document.getElementById("pecas-nome").value;
+      show(document.getElementById("out-pecas"), fetch(BASE + "/api/pecas?nome=" + encodeURIComponent(n)));
+    };
+
+    document.getElementById("btn-pecas-id").onclick = () => {
+      const id = document.getElementById("pecas-id").value;
+      show(document.getElementById("out-pecas"), fetch(BASE + "/api/pecas/" + encodeURIComponent(id)));
+    };
+
+    document.getElementById("btn-pecas-post").onclick = () =>
+      show(
+        document.getElementById("out-pecas"),
+        fetch(BASE + "/api/pecas", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            numeroIdentificacao: "UI-" + Date.now(),
+            nome: "Peça teste UI",
+            descricao: "Criada pelo test-ui",
+          }),
+        })
+      );
+
+    document.getElementById("btn-cli-list").onclick = () =>
+      show(document.getElementById("out-cli"), fetch(BASE + "/api/clientes"));
+
+    document.getElementById("btn-cli-nome").onclick = () => {
+      const n = document.getElementById("cli-nome").value;
+      show(document.getElementById("out-cli"), fetch(BASE + "/api/clientes?nome=" + encodeURIComponent(n)));
+    };
+
+    document.getElementById("btn-cli-id").onclick = () => {
+      const id = document.getElementById("cli-id").value;
+      show(document.getElementById("out-cli"), fetch(BASE + "/api/clientes/" + encodeURIComponent(id)));
+    };
+
+    document.getElementById("btn-cli-cpf").onclick = () => {
+      const c = document.getElementById("cli-cpf").value;
+      show(document.getElementById("out-cli"), fetch(BASE + "/api/clientes/cpf/" + encodeURIComponent(c)));
+    };
+
+    document.getElementById("btn-cli-post").onclick = () =>
+      show(
+        document.getElementById("out-cli"),
+        fetch(BASE + "/api/clientes", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cpf: "52998224725", nome: "Cliente UI" }),
+        })
+      );
+
+    document.getElementById("btn-rep-list").onclick = () =>
+      show(document.getElementById("out-rep"), fetch(BASE + "/api/representantes"));
+
+    document.getElementById("btn-rep-nome").onclick = () => {
+      const n = document.getElementById("rep-nome").value;
+      show(document.getElementById("out-rep"), fetch(BASE + "/api/representantes?nome=" + encodeURIComponent(n)));
+    };
+
+    document.getElementById("btn-rep-id").onclick = () => {
+      const id = document.getElementById("rep-id").value;
+      show(document.getElementById("out-rep"), fetch(BASE + "/api/representantes/" + encodeURIComponent(id)));
+    };
+
+    document.getElementById("btn-rep-cpf").onclick = () => {
+      const c = document.getElementById("rep-cpf").value;
+      show(document.getElementById("out-rep"), fetch(BASE + "/api/representantes/cpf/" + encodeURIComponent(c)));
+    };
+
+    document.getElementById("btn-rep-post").onclick = () =>
+      show(
+        document.getElementById("out-rep"),
+        fetch(BASE + "/api/representantes", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ cpf: "11144477735", nome: "Rep UI" }),
+        })
+      );
+  </script>
+</body>
+</html>
